@@ -1,0 +1,60 @@
+server:
+  port: 8080
+
+spring:
+  profiles:
+    active: dev
+  main:
+    allow-circular-references: true
+  datasource:
+    druid:
+      driver-class-name: ${bm.datasource.driver-class-name}
+      url: jdbc:mysql://${bm.datasource.host}:${bm.datasource.port}/${bm.datasource.database}?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+      username: ${bm.datasource.username}
+      password: ${bm.datasource.password}
+  redis:
+    host: ${bm.redis.host}
+    port: ${bm.redis.port}
+    database: ${bm.redis.database}
+  mail:
+    host: ${bm.mail.host}
+    username: ${bm.mail.username}
+    password: ${bm.mail.password}
+    port: ${bm.mail.port}
+    default-encoding: utf-8
+    properties:
+      mail:
+        smtp:
+          socketFactoryClass: javax.net.ssl.SSLSocketFactory
+        debug: true
+    protocol: smtps
+
+minio:
+  accessKey: ${bm.minio.accessKey}
+  secretKey: ${bm.minio.secretKey}
+  bucket: ${bm.minio.bucket}
+  endpoint: ${bm.minio.endpoint}
+  readPath: ${bm.minio.readPath}
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.bitemate.entity
+  configuration:
+    map-underscore-to-camel-case: true
+
+logging:
+  level:
+    com:
+      bitemate:
+        mapper: debug
+        service: info
+        controller: info
+
+bitemate:
+  jwt:
+    admin-secret-key: adminInBitemate
+    admin-ttl: 7200000
+    admin-token-name: token
+    user-secret-key: userInBitemate
+    user-ttl: 7200000
+    user-token-name: authentication

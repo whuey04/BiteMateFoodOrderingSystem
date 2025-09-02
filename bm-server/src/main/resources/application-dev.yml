@@ -1,0 +1,29 @@
+bm:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    host: localhost
+    port: 3306
+    database: bitemate
+    username:
+    password:
+
+  redis:
+    host: localhost
+    port: 6379
+    database: 10
+
+  mail:
+    host:
+    username:
+    password:
+    port:
+
+  minio:
+    accessKey:
+    secretKey:
+    bucket:
+    endpoint:
+    readPath:
+
+
+# TODO Please setup all the data for your mysql database, redis, email and minio before using this app
