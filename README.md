@@ -109,7 +109,7 @@ Before running the project, make sure you have:
 ### 2. Clone the Repository
 
 ```
-git clone https://github.com/WenHuey04/BiteMateFoodOrderingSystem.git
+git clone https://github.com/whuey04/BiteMateFoodOrderingSystem.git
 cd BiteMateFoodOrderingSystem
 ```
 
